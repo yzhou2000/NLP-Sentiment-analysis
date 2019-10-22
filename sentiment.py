@@ -1,19 +1,3 @@
-# This code is for my NLP Udemy class, which can be found at:
-# https://deeplearningcourses.com/c/data-science-natural-language-processing-in-python
-# https://www.udemy.com/data-science-natural-language-processing-in-python
-# It is written in such a way that tells a story.
-# i.e. So you can follow a thought process of starting from a
-# simple idea, hitting an obstacle, overcoming it, etc.
-# i.e. It is not optimized for anything.
-
-# Author: http://lazyprogrammer.me
-from __future__ import print_function, division
-from future.utils import iteritems
-from builtins import range
-# Note: you may need to update your version of future
-# sudo pip install -U future
-
-
 import nltk
 import numpy as np
 from sklearn.utils import shuffle
@@ -145,7 +129,7 @@ print("Test accuracy:", model.score(Xtest, Ytest))
 # let's look at the weights for each word
 # try it with different threshold values!
 threshold = 0.5
-for word, index in iteritems(word_index_map):
+for word, index in word_index_map.items():
     weight = model.coef_[0][index]
     if weight > threshold or weight < -threshold:
         print(word, weight)
